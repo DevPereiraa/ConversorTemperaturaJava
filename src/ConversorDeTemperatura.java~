@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class ConversorDeTemperatura(double temperatura, char unidadeAtual, char unidadeParaConversao) {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Digite o valor da temperatura: ");
+        double temperatura = sc.nextDouble();
+
+        System.out.println("Digite a unidade atual (C/F/K/R): ");
+        char unidadeAtual = sc.next().toUpperCase().charAt(0);
+
+        System.out.println("Diigite a unidade para conversão (C/F/K/R): ");
+        char unidadeParaConversao = sc.next().toUpperCase().charAt(0);
+
+        double resultado = conversorTemperatura(temperatura, unidadeAtual, unidadeParaConversao);
+
+        if (Double.isNaN(resultado)) {
+            System.out.println("Conversão inválida. Verifique as unidades inseridas.");
+        } else {
+            System.out.printf("A temperatura convertida é: %.2f %c\n", resultado, unidadeParaConversao);
+        }
+        sc.close();
+    }
+}
